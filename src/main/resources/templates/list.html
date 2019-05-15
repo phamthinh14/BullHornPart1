@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="/add">Add a Message</a><br/>
+
+<table>
+    <tr>
+        <th> Cotent</th>
+        <th> Posted Date</th>
+        <th> Sent By</th>
+        <th> Actions</th>
+    </tr>
+
+    <tr th:each="var:${messages}">
+        <td th:text="${var.content}"></td>
+        <td th:text="${var.date}"></td>
+        <td th:text="${var.sentby}"></td>
+        <td>
+            <a th:href="@{/update/{id} (id=${var.id})}">Update</a>
+            <a th:href="@{/detail/{id} (id=${var.id})}">Details</a>
+            <a th:href="@{/delete/{id} (id=${var.id})}">Delete</a>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
