@@ -9,35 +9,63 @@
 </head>
 <body>
 <div class="container">
-    <div class="jumbutron">
-        <a href="/add">Add a Message</a><br/>
-
-        <table style="height: 100px">
-            <tr>
-                <th> Content</th>
-                <th> Posted Date</th>
-                <th> Sent By</th>
-                <th> Actions</th>
-            </tr>
-
-            <tr th:each="var:${messages}">
-
-                <td th:text="${var.content}"></td>
-                <td th:text="${var.date}"></td>
-                <td th:text="${var.sentby}"></td>
-                <td>
+    <a href="/add">Add a Message</a><br/>
+    <div class="card bg-light mb-3" th:each="var:${messages}">
+        <div class="card-header">
+            <ul class="nav nav-pills card-header-pills">
+                <li class="nav-item" style="width: 200px;">
                     <a th:href="@{/update/{id} (id=${var.id})}">Update</a>
+                </li>
+                <li class="nav-item" style="width: 200px;">
                     <a th:href="@{/detail/{id} (id=${var.id})}">Details</a>
+                </li>
+                <li class="nav-item" style="width: 200px;">
                     <a th:href="@{/delete/{id} (id=${var.id})}">Delete</a>
+                </li>
+            </ul>
+        </div>
+        <img class="card-img-top" th:src="${var.headshot}"
+             style="width: 1108px; height: 600px; background-color: rgba(0,0,255,0.1);">
+        <div class="card-body">
+            <h3 class="card-title">Content: </h3>
+            <p class="card-text" th:text="${var.content}"></p>
+            <h6 class="card-title">Sent by:</h6>
+            <p class="card-text" th:text="${var.sentby}"></p>
 
-                </td>
-                <div th:if="${var.headshot}!=null">
-                    <img th:src="${var.headshot}"/>
-                    <hr />
-                </div>
-            </tr>
-        </table>
+            <p>
+                <small th:text="${var.date}"></small>
+            </p>
+        </div>
     </div>
+    <!--<div class="jumbutron">-->
+    <!--<a href="/add">Add a Message</a><br/>-->
+
+    <!--<table style="height: 100px">-->
+    <!--<tr>-->
+    <!--<th> Content</th>-->
+    <!--<th> Posted Date</th>-->
+    <!--<th> Sent By</th>-->
+    <!--<th> Actions</th>-->
+    <!--</tr>-->
+
+    <!--<tr th:each="var:${messages}">-->
+
+    <!--<td th:text="${var.content}"></td>-->
+    <!--<td th:text="${var.date}"></td>-->
+    <!--<td th:text="${var.sentby}"></td>-->
+    <!--<td>-->
+    <!--<a th:href="@{/update/{id} (id=${var.id})}">Update</a>-->
+    <!--<a th:href="@{/detail/{id} (id=${var.id})}">Details</a>-->
+    <!--<a th:href="@{/delete/{id} (id=${var.id})}">Delete</a>-->
+
+    <!--</td>-->
+    <!--<div th:if="${var.headshot}!=null">-->
+    <!--<img th:src="${var.headshot}"/>-->
+    <!--<hr />-->
+    <!--</div>-->
+    <!--</tr>-->
+    <!--</table>-->
+    <!--</div>-->
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

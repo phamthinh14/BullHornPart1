@@ -40,7 +40,7 @@
         >
 
             <input type="hidden" th:field="*{id}"/>
-            <input type="file" name="file"/> <br/> <br/>
+
             Content :<textarea rows="3" id="myTextArea" th:field="*{content}"/>
             <span th:if="${#fields.hasErrors('content')}"
                   th:errors="*{content}"></span> <br/>
@@ -52,7 +52,7 @@
             Posted Date :<input type="text" th:field="*{date}"/>
             <span th:if="${#fields.hasErrors('date')}"
                   th:errors="*{date}"></span> <br/>
-
+            <input type="file" name="file"/> <br/> <br/>
             <input type="submit" value="Submit"/>
 
         </form>
