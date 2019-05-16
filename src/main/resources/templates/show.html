@@ -7,7 +7,7 @@
 <body>
 <a href="/">Show All Messagess</a><br/>
 Content :<span th:text="${message.content}"></span>
-Posted Date :<span th:text="${message.sentby}"></span>
+Posted Date :<span th:text="${message.date}"></span>
 Sent By :<span th:text="${message.sentby}"></span>
 
 <a th:href="@{/delete/{id}(id=${message.id})}">Delete this message</a>

@@ -20,7 +20,7 @@
     <span th:if="${#fields.hasErrors('sentby')}"
           th:errors="*{sentby}"></span> <br />
 
-    Posted Date :<input type="text" th:field="*{date}"/>
+    Posted Date :<input type="text" th:id="date" th:name="date" th:value="${#dates.format(message.getDate(), 'MM/dd/yyyy')}"/>
     <span th:if="${#fields.hasErrors('date')}"
           th:errors="*{date}"></span> <br />
 
