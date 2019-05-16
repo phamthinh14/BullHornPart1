@@ -2,32 +2,70 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bootstrap 101 Template</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
 </head>
 <body>
-<form action="#"
-      th:action="@{/process}"
-      th:object="${message}"
-      method="post">
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
 
-    <input type="hidden" th:field="*{id}"/>
+    textarea[id="myTextArea"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
+<div class="container">
+    <div class="jumbutron">
+        <form method="POST"
+              action="/add"
+              th:object="${message}"
+              enctype="multipart/form-data"
+        >
 
-    Content :<textarea rows="3" th:field="*{content}"/>
-    <span th:if="${#fields.hasErrors('content')}"
-          th:errors="*{content}"></span> <br />
+            <input type="hidden" th:field="*{id}"/>
+            <input type="file" name="file"/> <br/> <br/>
+            Content :<textarea rows="3" id="myTextArea" th:field="*{content}"/>
+            <span th:if="${#fields.hasErrors('content')}"
+                  th:errors="*{content}"></span> <br/>
 
-    Sent By :<input type="text" th:field="*{sentby}"/>
-    <span th:if="${#fields.hasErrors('sentby')}"
-          th:errors="*{sentby}"></span> <br />
+            Sent By :<input type="text" th:field="*{sentby}"/>
+            <span th:if="${#fields.hasErrors('sentby')}"
+                  th:errors="*{sentby}"></span> <br/>
 
-    Posted Date :<input type="text" th:field="*{date}"/>
-    <span th:if="${#fields.hasErrors('date')}"
-          th:errors="*{date}"></span> <br />
+            Posted Date :<input type="text" th:field="*{date}"/>
+            <span th:if="${#fields.hasErrors('date')}"
+                  th:errors="*{date}"></span> <br/>
 
+            <input type="submit" value="Submit"/>
 
-
-       <input type="submit" value="Submit"/>
-
-</form>
+        </form>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
 </html>

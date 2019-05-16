@@ -22,6 +22,16 @@ public class Message {
     @NotNull
     private String sentby;
 
+    private String headshot;
+
+    public String getHeadshot() {
+        return headshot;
+    }
+
+    public void setHeadshot(String headshot) {
+        this.headshot = headshot;
+    }
+
     public long getId() {
         return id;
     }
