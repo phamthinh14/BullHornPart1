@@ -63,7 +63,7 @@ public class HomeController {
         return "redirect:/";
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/add")
     public String index(){
         return "list";
     }
