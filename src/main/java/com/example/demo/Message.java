@@ -24,6 +24,16 @@ public class Message {
 
     private String headshot;
 
+    public Message(@NotNull String content, @NotNull String date, @NotNull String sentby, String headshot) {
+        this.content = content;
+        this.date = date;
+        this.sentby = sentby;
+        this.headshot = headshot;
+    }
+
+    public Message() {
+    }
+
     public String getHeadshot() {
         return headshot;
     }
