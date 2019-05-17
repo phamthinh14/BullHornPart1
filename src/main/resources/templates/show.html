@@ -85,7 +85,7 @@
             <!--<h6 id="list-item-2">Sent by:</h6>-->
 
             <p>Posted Date: <span th:text="${message.date}"></span></p>
-           
+
             <img th:src="${message.headshot}"/>
 
             <a th:href="@{/delete/{id}(id=${message.id})}">Delete this message</a>
