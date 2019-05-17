@@ -49,7 +49,7 @@
             <span th:if="${#fields.hasErrors('sentby')}"
                   th:errors="*{sentby}"></span> <br/>
 
-            Posted Date :<input type="text" th:field="*{date}"/>
+            Posted Date :<input type="date" th:field="*{date}"/>
             <span th:if="${#fields.hasErrors('date')}"
                   th:errors="*{date}"></span> <br/>
             <input type="file" name="file"/> <br/> <br/>

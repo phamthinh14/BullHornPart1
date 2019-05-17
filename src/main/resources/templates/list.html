@@ -8,6 +8,9 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+<div th:replace="base :: navlinks"></div>
+<h2>Index Page</h2>
+<div th:replace="base :: footer"></div>
 <div class="container">
     <a href="/add">Add a Message</a><br/>
     <div class="card bg-light mb-3" th:each="var:${messages}">
